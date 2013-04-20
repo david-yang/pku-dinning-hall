@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+        <title>北京大学食堂开餐时间表 </title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <script type="text/javascript" src="./js/jquery.js"></script>
+        <style>
+                #cafeteriaList{
+                        margin:0 auto;
+                        width:880px;
+                }
+                #cafeteriaList p{
+                        display:inline;
+                        line-height:18px;
+                        padding:0 6px;
+                }
+                #cafeteriaList div{
+                        background:#BCCCED;
+                        border:1px solid #E1F0F7;
+                        padding:5px;
+                        width:400px;
+                        margin:5px auto;
+
+                }
+                #cafeteriaList #txt, #cafeteriaList h1{
+                        font-size:24px;
+                        margin-bottom:20px;
+                        display:block;
+                        background:none;
+                        text-align:center;
+
+                }
+                .foodBoards{
+                        margin-top:50px;
+                }
+        </style>
+<script type="text/javascript">
+                function startTime()
+                {
+                var today=new Date()
+                var h=today.getHours()
+                var m=today.getMinutes()
+                var s=today.getSeconds()
+                // add a zero in front of numbers<10
+                m=checkTime(m)
+                s=checkTime(s)
+                document.getElementById('txt').innerHTML=h+":"+m+":"+s
+                t=setTimeout('startTime()',500)
+                }
+                
+                function checkTime(i)
+                {
+                if (i<10) 
+                  {i="0" + i}
+                  return i
+                }
+        </script>
+        </head>
+        <body  onload="startTime()">
+        <div id="cafeteriaList" class="">
+                <h1>当前开餐食堂</h1>
+                <p id="txt"></p>
+
+        </div>
+        <center><a class="foodBoards" href="http://attach3.bdwm.net/attach/boards/Food/M.1316694550.A/sjb.jpg">详细时间表</a></center>
+        <script type="text/javascript" src="./js/config.js" ></script>
+        <script type="text/javascript" src="./js/cafeteria.js"></script>
+        <script type="text/javascript" src="./js/view.js" ></script>
+        <script type="text/javascript" src="./js/engin.js" ></script>
+
+        <script type="text/javascript">
+                engin();
+                //var go = new engin();
+                //go.init;
+                //alert(cafeteria2_box[5].name);
+        </script>
+        </body>
+</html>
